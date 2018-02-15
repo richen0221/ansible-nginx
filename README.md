@@ -47,7 +47,7 @@ Usage
 After the provision, you can run the playbook directly as bleow :
 
 `ansible-playbook nginx.yml`
-``````
+
 
 License
 -------
