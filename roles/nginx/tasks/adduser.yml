@@ -1,0 +1,15 @@
+---
+# add project user for CentOS 7 nginx
+
+    - name: Create nginx work folder and project user
+      user: name={{ PRJ_USER_NAME }} password="{{ PRJ_USER_PASSWORD }}" home="/home/{{ PRJ_NAME }}"
+     
+      
+    - name: Change nginx work folder's permission
+      file: path="/home/{{ PRJ_NAME }}" state=directory mode=0755
+
+    - name: create nginx working folder
+      file: path="/home/{{ PRJ_NAME }}/www" state=directory mode=0755 owner={{ PRJ_USER_NAME }} group={{ PRJ_USER_NAME }}
+
+    - name: create nginx log folder
+      file: path="/home/{{ PRJ_NAME }}/logs" state=directory mode=0755 owner={{ PRJ_USER_NAME }} group={{ PRJ_USER_NAME }}

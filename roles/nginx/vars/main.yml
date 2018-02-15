@@ -1,0 +1,6 @@
+---
+# vars file for nginx
+PHP_VERSION: remi-php72
+PRJ_USER_NAME: web
+PRJ_USER_PASSWORD:
+PRJ_NAME: web

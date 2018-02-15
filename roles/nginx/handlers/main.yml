@@ -1,0 +1,10 @@
+---
+# handlers file for nginx
+- name: restart ftp
+  service: state=restarted name=vsftpd enabled=yes
+  
+- name: restart nginx
+  systemd: state=restarted name=nginx enabled=yes
+  
+- name: restart php-fpm
+  systemd: state=restarted name=php-fpm enabled=yes

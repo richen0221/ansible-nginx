@@ -1,0 +1,12 @@
+/home/{{ PRJ_NAME }}/logs/*log {
+    create 0644 nginx nginx
+    daily
+    rotate 30
+    missingok
+    sharedscripts
+    compress
+    delaycompress
+    postrotate
+        /bin/kill -USR1 `cat /run/nginx.pid 2>/dev/null` 2>/dev/null || true
+    endscript
+}

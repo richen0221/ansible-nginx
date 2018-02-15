@@ -1,0 +1,7 @@
+- name: Install the Nginx material
+  hosts: server-ip
+  remote_user: secondary_user
+
+  roles:
+        - nginx
+  become: yes
